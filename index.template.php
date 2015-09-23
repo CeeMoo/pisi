@@ -228,6 +228,25 @@ function template_body_above()
 			<img id="logos" src="' . $settings['images_url'] . '/theme/logo.png" alt="smfdestek" title="Smf Destek">';
 
 			template_menu();
+			
+	if ($context['allow_search'])
+	{
+		echo '
+			<form id="aramaz" class="floatright" action="', $scripturl, '?action=search2" method="post" accept-charset="', $context['character_set'], '">
+				<input type="search" name="search" value="" class="aramaz">&nbsp;';
+
+		// Search within current topic?
+		if (!empty($context['current_topic']))
+			echo '
+				<input type="hidden" name="sd_topic" value="', $context['current_topic'], '">';
+		// If we're on a certain board, limit it to this board ;).
+		elseif (!empty($context['current_board']))
+			echo '
+				<input type="hidden" name="sd_brd[', $context['current_board'], ']" value="', $context['current_board'], '">';
+
+		echo '
+			</form>';
+	}
 
     echo '
         </div>

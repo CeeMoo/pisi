@@ -1,6 +1,61 @@
 #ust {background:#f7f7f7;border-bottom: 1px solid #d8d8d8;height: 40px;line-height: 40px;}
-#menuyeri{height: 50px;line-height: 50px;border-bottom: 1px solid #d8d8d8;}
+#menuyeri{height: 50px;line-height: 46px;border-bottom: 1px solid #d8d8d8;}
 #logos{float: left;border-right: 1px solid #d8d8d8;}
+
+#aramaz input[type=search] {
+	background: #ededed url("../images/theme/search-icon.png") no-repeat 9px center;
+	border: 1px solid #d8d8d8;
+	padding: 0px;
+	width: 55px;
+	height: 50px;
+	border-radius: 0;
+	
+	
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+}
+#aramaz input[type=search]:focus {
+	width: 130px;
+	background-color: #fff;
+	border-color: #6064B5;
+	
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+
+
+#aramaz input:-moz-placeholder {
+	color: #999;
+}
+#aramaz input::-webkit-input-placeholder {
+	color: #999;
+}
+
+/* Demo 2 */
+#aramaz  input[type=search] {
+	width: 15px;
+	padding-left: 35px;
+	color: transparent;
+	cursor: pointer;
+}
+#aramaz  input[type=search]:hover {
+	background-color: #fff;
+}
+#aramaz  input[type=search]:focus {
+	width: 130px;
+	padding-left: 32px;
+	color: #000;
+	background-color: #fff;
+	cursor: auto;
+}
+#aramaz  input:-moz-placeholder {
+	color: transparent;
+}
+#aramaz  input::-webkit-input-placeholder {
+	color: transparent;
+}
 /* You can find detailed information at http://wiki.simplemachines.org/smf/Curve2_CSS
 /* Index */
 html {
@@ -1093,9 +1148,6 @@ img.sort, .sort {
 #wrapper {
 	clear: both;
 	background: #fff;
-	border: 1px solid #b8b8b8;
-	border-radius: 8px;
-	box-shadow: 0 2px 3px rgba(0,0,0,0.14);
 }
 
 /* The framing graphics */
@@ -2964,7 +3016,6 @@ div.lastpost p {
 	overflow: hidden;
 	box-sizing: border-box;
 	border: 1px solid #DDD;
-	margin-bottom: 3px;
 	margin-top: -1px;
 }
 /* Child boards */
@@ -3591,6 +3642,16 @@ div.cat_bar::before {
 .cat_bar h3 {
 	padding: 8px 12px 6px 12px;
 }
+.desc::after {    border-right: 9px solid #6064B5;
+    border-bottom: 9px solid transparent;
+    border-top: 9px solid transparent;
+    content: "";
+    display: block;
+    height: 0;
+    margin: -15px 0px 0px -19px;
+    position: absolute;
+    width: 0;}
+
 /* Styles for rounded headers. */
 .cat_bar .desc
 {
@@ -3601,6 +3662,7 @@ div.cat_bar::before {
 }
 .desc {float: left;}
 h3.catbg {
+	box-shadow: 0 16px 20px rgba(255,255,255,0.15) inset;
 	float: left;
 	overflow: hidden;
 	font-size: 1.1em;
@@ -3610,6 +3672,7 @@ h3.catbg {
 	padding: 8px;
 	background: none;
 }
+
 h3.catbg, h3.catbg a:link, h3.catbg a:visited, h3.catbg a:hover {
 	color: #fff;
 }
