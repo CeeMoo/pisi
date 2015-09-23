@@ -1,7 +1,7 @@
 #ust {background:#f7f7f7;border-bottom: 1px solid #d8d8d8;height: 40px;line-height: 40px;}
 #menuyeri{height: 50px;line-height: 46px;border-bottom: 1px solid #d8d8d8;}
 #logos{float: left;border-right: 1px solid #d8d8d8;}
-
+.solborder {border-left: 1px solid #d8d8d8; padding-left:7px;}
 #aramaz input[type=search] {
 	background: #ededed url("../images/theme/search-icon.png") no-repeat 9px center;
 	border: 1px solid #d8d8d8;
