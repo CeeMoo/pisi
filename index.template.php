@@ -219,21 +219,21 @@ function template_body_above()
 		}
 
 
-global $db_prefix, $scripturl, $smcFunc;
+     global $db_prefix, $scripturl, $smcFunc;
 
-$request = $smcFunc['db_query']('',"SELECT f.ID_FILE, f.ID_MEMBER, f.date, f.ID_CAT, f.totaldownloads, f.title AS ftitle,
-c.title, m.real_Name, m.ID_MEMBER AS mID_MEMBER
-FROM {$db_prefix}down_file AS f, {$db_prefix}down_cat AS c, {$db_prefix}members AS m
-WHERE f.ID_CAT = '7'
-AND f.approved = '1'
-AND f.ID_MEMBER = m.ID_MEMBER
-ORDER BY RAND()
-LIMIT 1");
+     $request = $smcFunc['db_query']('',"SELECT f.ID_FILE, f.ID_MEMBER, f.date, f.ID_CAT, f.totaldownloads, f.title AS ftitle,
+     c.title, m.real_Name, m.ID_MEMBER AS mID_MEMBER
+     FROM {$db_prefix}down_file AS f, {$db_prefix}down_cat AS c, {$db_prefix}members AS m
+     WHERE f.ID_CAT = '7'
+     AND f.approved = '1'
+     AND f.ID_MEMBER = m.ID_MEMBER
+     ORDER BY RAND()
+     LIMIT 1");
 
-while($row = $smcFunc['db_fetch_assoc']($request)) {
-echo '
-<div class="solborder floatright"><a href="',$scripturl,'?action=downloads;sa=view;id=',$row['ID_FILE'],'" title="',$row['ftitle'],'">'. shorten_subject($row['ftitle'], 30) .'</a></div>';
-};
+     while($row = $smcFunc['db_fetch_assoc']($request)) {
+     echo '
+        <div class="solborder floatright"><a href="',$scripturl,'?action=downloads;sa=view;id=',$row['ID_FILE'],'" title="',$row['ftitle'],'">'. shorten_subject($row['ftitle'], 30) .'</a></div>';
+     };
 
 	echo '
 		</div>
