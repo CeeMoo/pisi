@@ -3567,14 +3567,26 @@ ul.post_options li {
 /* General Classes */
 /* Cat_bar / catbg */
 div.cat_bar {
-	background: #557ea0;
+	background: #575BB3;
 	border-bottom: 1px solid #777;
 	padding: 0;
-	border-radius: 6px 6px 0 0;
 	box-shadow: 0 16px 20px rgba(255,255,255,0.15) inset;
 	text-shadow: -1px -1px 1px rgba(0,0,0,0.2);
 	box-sizing: border-box;
 	margin-bottom: 1px;
+	margin-left:-9px;
+	height: 40px;
+}
+div.cat_bar::before {
+    border-top: 10px solid #575BB3;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid transparent;
+    content: "";
+    display: block;
+    height: 0;
+    margin: 40px 0 0 0px;
+    position: absolute;
+    width: 0;
 }
 .cat_bar h3 {
 	padding: 8px 12px 6px 12px;
@@ -3585,9 +3597,11 @@ div.cat_bar {
 	font-size: 10px;
 	line-height: 1.5em;
 	font-weight: normal;
-	margin: -8px 0 4px 12px;
+	margin: 12px;
 }
+.desc {float: left;}
 h3.catbg {
+	float: left;
 	overflow: hidden;
 	font-size: 1.1em;
 	font-family: "Tahoma", sans-serif;
