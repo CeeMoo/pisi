@@ -111,11 +111,11 @@ require_once($boarddir."/NChat/NChatBoardIndex.php");
 					<span id="category_', $category['id'], '_upshrink" class="', $category['is_collapsed'] ? 'toggle_down' : 'toggle_up', ' floatright" data-collapsed="', (int) $category['is_collapsed'], '" title="', !$category['is_collapsed'] ? $txt['hide_category'] : $txt['show_category'] ,'" style="display: none;"></span>';
 
 		echo '
-					', $category['link'], '
+					<b>SMF </b>', $category['link'], '
 				</h3>', !empty($category['description']) ? '
 				<div class="desc">' . $category['description'] . '</div>' : '', '
 			</div>
-			<div id="category_', $category['id'], '_boards" ', (!empty($category['css_class']) ? ('class="'. $category['css_class'] .'"') : '') ,'>';
+			<div id="category_', $category['id'], '_boards">';
 
 			/* Each board in each category's boards has:
 			new (is it new?), id, name, description, moderators (see below), link_moderators (just a list.),
@@ -124,14 +124,14 @@ require_once($boarddir."/NChat/NChatBoardIndex.php");
 			foreach ($category['boards'] as $board)
 			{
 				echo '
-				<div id="board_', $board['id'], '" class="up_contain ', (!empty($board['css_class']) ? $board['css_class'] : '') ,'">
+				<div id="board_', $board['id'], '" class="up_contain">
 					<div class="icon">
 						<a href="', ($board['is_redirect'] || $context['user']['is_guest'] ? $board['href'] : $scripturl . '?action=unread;board=' . $board['id'] . '.0;children'), '">
 							<span class="board_', $board['board_class'], '"', !empty($board['board_tooltip']) ? ' title="' . $board['board_tooltip'] . '"' : '', '></span>
 						</a>
 					</div>
 					<div class="info">
-						<a class="subject" href="', $board['href'], '" id="b', $board['id'], '">', $board['name'], '</a>';
+						<h2><a class="subject" href="', $board['href'], '" id="b', $board['id'], '">', $board['name'], '</a></h2>';
 
 				// Has it outstanding posts for approval?
 				if ($board['can_approve_posts'] && ($board['unapproved_posts'] || $board['unapproved_topics']))
@@ -141,28 +141,7 @@ require_once($boarddir."/NChat/NChatBoardIndex.php");
 				echo '
 
 						<p>', $board['description'] , '</p>';
-
-				// Show the "Moderators: ". Each has name, href, link, and id. (but we're gonna use link_moderators.)
-				if (!empty($board['link_moderators']))
-					echo '
-						<p class="moderators">', count($board['link_moderators']) == 1 ? $txt['moderator'] : $txt['moderators'], ': ', implode(', ', $board['link_moderators']), '</p>';
-
-				// Show some basic information about the number of posts, etc.
-					echo '
-					</div>
-					<div class="stats">
-						<p>', comma_format($board['posts']), ' ', $board['is_redirect'] ? $txt['redirects'] : $txt['posts'], '
-						', $board['is_redirect'] ? '' : '<br> ' . comma_format($board['topics']) . ' ' . $txt['board_topics'], '
-						</p>
-					</div>
-					<div class="lastpost">';
-
-				if (!empty($board['last_post']['id']))
-					echo '
-						<p>', $board['last_post']['last_post_message'], '</p>';
-				echo '
-					</div>';
-				// Show the "Child Boards: ". (there's a link_children but we're going to bold the new ones...)
+	// Show the "Child Boards: ". (there's a link_children but we're going to bold the new ones...)
 				if (!empty($board['children']))
 				{
 					// Sort the links into an array with new boards bold so it can be imploded.
@@ -180,14 +159,34 @@ require_once($boarddir."/NChat/NChatBoardIndex.php");
 						if ($child['can_approve_posts'] && ($child['unapproved_posts'] || $child['unapproved_topics']))
 							$child['link'] .= ' <a href="' . $scripturl . '?action=moderate;area=postmod;sa=' . ($child['unapproved_topics'] > 0 ? 'topics' : 'posts') . ';brd=' . $child['id'] . ';' . $context['session_var'] . '=' . $context['session_id'] . '" title="' . sprintf($txt['unapproved_posts'], $child['unapproved_topics'], $child['unapproved_posts']) . '" class="moderation_link">(!)</a>';
 
-						$children[] = $child['new'] ? '<strong>' . $child['link'] . '</strong>' : $child['link'];
+						$children[] = $child['new'] ? '<strong>' . $child['link'] . '</strong>' :'<strong>' . $child['link'] . '</strong>';
 					}
 
 				echo '
 					<div id="board_', $board['id'], '_children" class="children">
-						<p><strong>', $txt['sub_boards'], '</strong>: ', implode(', ', $children), '</p>
+						<p>', implode(' ', $children), '</p>
 					</div>';
 				}
+				// Show the "Moderators: ". Each has name, href, link, and id. (but we're gonna use link_moderators.)
+				if (!empty($board['link_moderators']))
+					echo '
+						<p class="moderators">', count($board['link_moderators']) == 1 ? $txt['moderator'] : $txt['moderators'], ': ', implode(', ', $board['link_moderators']), '</p>';
+
+				// Show some basic information about the number of posts, etc.
+					echo '
+					</div>
+					<div class="stats">
+						<p>', comma_format($board['posts']), ' ', $board['is_redirect'] ? $txt['redirects'] : $txt['posts'], '
+						', $board['is_redirect'] ? '' : '<br> ' . comma_format($board['topics']) . ' ' . $txt['board_topics'], '
+						</p>
+					</div>
+					<div class="lastpost">';
+					if (!empty($board['last_post']['id']))
+					echo '
+						<p>', $board['last_post']['last_post_message'], '</p>';
+				echo '
+					</div>';
+			
 
 				echo '
 					</div>';
@@ -282,7 +281,13 @@ function template_info_center()
 
 	// Info center collapse object.
 	echo '
-	<script><!-- // --><![CDATA[
+<script><!-- // --><![CDATA[
+		var teknoromi_sidebar = new Object();
+		teknoromi_sidebar["left"] = "left Panel";
+		teknoromi_sidebar["right"] = "right Panel";
+		function setUpshrinkTitles() {if(this.opt.bToggleEnabled){ var panel = this.opt.aSwappableContainers[0].substring(8, this.opt.aSwappableContainers[0].length - 3).toLowerCase(); document.getElementById("tekno" + panel).setAttribute("title", (this.bCollapsed ? "Hide the " : "Show the ") + teknoromi_sidebar[panel]);}}	
+		var leftPanel=new smc_Toggle({bToggleEnabled:true,bCurrentlyCollapsed:false,funcOnBeforeCollapse:setUpshrinkTitles,funcOnBeforeExpand:setUpshrinkTitles,aSwappableContainers:[\'upshrinkLeftBar\'],oCookieOptions:{bUseCookie:true,sCookieName:\'upshrleftPanel\',sCookieValue:\'0\'}});	
+		var rightPanel=new smc_Toggle({bToggleEnabled:true,bCurrentlyCollapsed:false,funcOnBeforeCollapse:setUpshrinkTitles,funcOnBeforeExpand:setUpshrinkTitles,aSwappableContainers:[\'upshrinkRightBar\'],oCookieOptions:{bUseCookie:true,sCookieName:\'upshrrightPanel\',sCookieValue:\'0\'}});	
 		var oInfoCenterToggle = new smc_Toggle({
 			bToggleEnabled: true,
 			bCurrentlyCollapsed: ', empty($options['collapse_header_ic']) ? 'false' : 'true', ',
