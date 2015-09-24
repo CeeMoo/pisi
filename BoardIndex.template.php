@@ -214,7 +214,7 @@ function template_boardindex_outer_below()
 		if (!empty($modSettings['sideright']))
 			{
 			echo '<td valign="top" id="upshrinkRightBarTD">
-				<div id="upshrinkRightBar" style="width:',$modSettings['siderightwidth'] ? $modSettings['siderightwidth'] :'200px','; margin: 4px;padding: 4px; overflow:hidden;">
+				<div id="upshrinkRightBar" style="width:',$modSettings['siderightwidth'] ? $modSettings['siderightwidth'] :'200px','; overflow:hidden;">
 				', empty($modSettings['sideright1']) ? '' : '<div class="cat_bar"><h3 class="catbg">'.$modSettings['righthtmlbaslik'].'</h3></div>'.$modSettings['sideright1'].'', '
 				', empty($modSettings['siderightphp']) ? '' : '<div class="cat_bar"><h3 class="catbg">'.$modSettings['rightphpbaslik'].'</h3></div>';eval($modSettings['siderightphp']);
 				if (!empty($modSettings['siderighthaberetkin']))
@@ -237,7 +237,7 @@ function template_boardindex_outer_below()
 								<div class="snrj"> ', $memberContext[$news['poster']['id']]['avatar']['image'],' 
 								<p>', $txt['by'], '', $news['poster']['link'], '</p>
 								</div>
-								</div><hr/>';
+								</div>';
 					 }
 				 } 
 				echo '</div>

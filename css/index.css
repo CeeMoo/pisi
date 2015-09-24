@@ -3459,7 +3459,7 @@ img.smiley {
 	clear: both;
 }
 #quickReplyOptions .roundframe {
-	margin: 0;
+	margin-top: -1px;
 	padding: 8px 10% 12px 10%;
 	border-top-left-radius: 0;
 	border-top-right-radius: 0;
@@ -3624,7 +3624,6 @@ div.cat_bar {
 	box-shadow: 0 16px 20px rgba(255,255,255,0.15) inset;
 	text-shadow: -1px -1px 1px rgba(0,0,0,0.2);
 	box-sizing: border-box;
-	margin-bottom: 1px;
 	margin-left:-9px;
 	height: 40px;
 }
@@ -3687,12 +3686,9 @@ h3.catbg .icon {
 /* Roundframe */
 .roundframe {
 	box-sizing: border-box;
-	margin: 10px 0 0 0;
-	padding: 12px 16px;
-	background: #F8F8F8;
-	border: 1px solid #c5c5c5;
-	border-radius: 7px;
-	box-shadow: 0 -2px 2px rgba(0,0,0,0.1);
+	margin: 0 0 0;
+	padding: 0px 0 0 9px;
+	border:1px solid #d8d8d8;
 	overflow: auto;
 }
 /* TitleBar & SubBar */
@@ -4004,14 +4000,14 @@ background-image: linear-gradient(to bottom, #f0b7a1 0%,#8c3310 50%,#752201 51%,
 	/* teknoromi sidebar smf.teknoromi.com yapımıdır */		
 	#teknoleft,#teknoright{width: 20px;border: medium none;height: 20px;position: absolute;}
 	#teknoleft{margin-left: -14px;background: url('../images/sidebar.png') no-repeat scroll 0% 0% transparent;}
-	#teknoright{margin-left: -2px;background: url('../images/sidebar1.png') no-repeat scroll 0% 0% transparent;}
+	#teknoright{margin-left: 4px;background: url('../images/sidebar1.png') no-repeat scroll 0% 0% transparent;}
 	#teknoleft:hover,#teknoright:hover{}
-	#upshrinkLeftBar,#upshrinkRightBar{border-radius: 5px;background:linear-gradient(to bottom, #f2f9fe 0%,#d6f0fd 100%);border: 1px solid #BECAD5;float: left;width: 99%;}
-	#upshrinkRightBar{box-shadow: 2px 2px 2px #C8C8C8;}
-	#upshrinkLeftBar{box-shadow: -2px 2px 2px #C8C8C8;}
-	.sidehaber{text-align: left;margin: 4px;font-size: 12px;}
+	#upshrinkLeftBar,#upshrinkRightBar{float: left;width: 99%;}
+	#upshrinkRightBar{box-shadow: 2px 0px 0px #C8C8C8;padding-left: 15px;}
+	#upshrinkLeftBar{box-shadow: -2px 2px 2px #C8C8C8;padding-right: 15px;}
+	.sidehaber{text-align: left;margin: 0px;padding:0 5px;font-size: 12px;background:linear-gradient(to bottom, #fff 0%,#EAEAEA 100%);border: 1px solid #BECAD5;line-height: 30px;}
 	.sideBaslik img{float: left;}
-	.sideBaslik a{color: orangered;font-size: 12px;}
+	.sideBaslik a{color: #5B5FB5;font-size: 12px;}
 	.snrj{text-align: left;color:#000;}
 	.snrj .avatar{width:25px;float: left;margin-left: 5px;}
 		.children strong {
