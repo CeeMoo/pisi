@@ -226,7 +226,7 @@ function template_body_above()
 						<h2>', $txt['news'], ': </h2>
 						<p>', $context['random_news_line'], '</p>
 					</div>';
-					
+
      global $db_prefix, $scripturl, $smcFunc;
 
      $request = $smcFunc['db_query']('',"SELECT f.ID_FILE, f.ID_MEMBER, f.date, f.ID_CAT, f.totaldownloads, f.title AS ftitle,
@@ -279,7 +279,6 @@ function template_body_above()
 
 	echo '
 	<div id="wrapper">
-		<div id="upper_section">
 			<div id="inner_section">';
 
 	// Show the menu here, according to the menu sub template, followed by the navigation tree.
@@ -287,13 +286,10 @@ function template_body_above()
 	theme_linktree();
 
 	echo '
-			</div>
 		</div>';
 
 	// The main content should go here.
-	echo '
-		<div id="content_section">
-			<div id="main_content_section">';
+
 }
 
 function template_body_below()
@@ -301,8 +297,6 @@ function template_body_below()
 	global $context, $txt, $scripturl, $modSettings;
 
 	echo '
-			</div>
-		</div>
 	</div>';
 
 	// Show the XHTML, RSS and WAP2 links, as well as the copyright.

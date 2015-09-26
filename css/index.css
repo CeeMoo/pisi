@@ -1299,8 +1299,7 @@ img#smflogo {
 	margin: 0;
 }
 #inner_section {
-	padding: 12px 10px 2px 10px;
-	border-radius: 6px 6px 0 0;
+	padding: 5px 0px 10px 0px;
 }
 #inner_section::after {
 	content:"";
@@ -1413,8 +1412,8 @@ ul li.greeting {
 #footer_section {
 	margin: 4em 0 0 0;
 	padding: 0;
-	background: #3e5a78;
-	border-top: 3px solid #b2b6bd;
+	background: #F7F7F7;
+	border-top: 3px solid #6164B7;
 
 }
 /* min-width should be equal to #wrapper min-width. */
@@ -1424,7 +1423,7 @@ ul li.greeting {
 #footer_section ul li, #footer_section p,
 #footer_section ul li a, #footer_section p a {
 	font-size: 0.9em;
-	color: #fff;
+	color: #080808;
 }
 #footer_section ul li {
 	display: inline;
