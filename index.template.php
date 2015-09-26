@@ -173,6 +173,7 @@ function template_body_above()
 	// Wrapper div now echoes permanently for better layout options. h1 a is now target for "Go up" links.
 	echo '
 	<div id="ust">
+	<div id="zaman">', $context['current_time'], '</div>
 		<div class="frame">';
 
 	// If the user is logged in, display some things that might be useful.
@@ -218,7 +219,14 @@ function template_body_above()
 			</ul>';
 		}
 
-
+	// Show a random news item? (or you could pick one from news_lines...)
+	if (!empty($settings['enable_news']) && !empty($context['random_news_line']))
+		echo '
+					<div class="news">
+						<h2>', $txt['news'], ': </h2>
+						<p>', $context['random_news_line'], '</p>
+					</div>';
+					
      global $db_prefix, $scripturl, $smcFunc;
 
      $request = $smcFunc['db_query']('',"SELECT f.ID_FILE, f.ID_MEMBER, f.date, f.ID_CAT, f.totaldownloads, f.title AS ftitle,
@@ -272,22 +280,7 @@ function template_body_above()
 	echo '
 	<div id="wrapper">
 		<div id="upper_section">
-			<div id="inner_section">
-				<div id="inner_wrap">
-					<div class="user">
-						', $context['current_time'], '
-					</div>';
-	// Show a random news item? (or you could pick one from news_lines...)
-	if (!empty($settings['enable_news']) && !empty($context['random_news_line']))
-		echo '
-					<div class="news">
-						<h2>', $txt['news'], ': </h2>
-						<p>', $context['random_news_line'], '</p>
-					</div>';
-
-	echo '
-					<hr class="clear">
-				</div>';
+			<div id="inner_section">';
 
 	// Show the menu here, according to the menu sub template, followed by the navigation tree.
 
