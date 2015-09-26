@@ -231,6 +231,7 @@ function template_mainview()
 				echo '
 				<a class="button" href="', $scripturl, '?action=downloads">', $txt['downloads_text_returndownload'], '</a
             </div>
+        </div>
         </div>';
 
 	}
@@ -393,10 +394,7 @@ function template_mainview()
 		}
 	}
 
-
-
-	downloads_copyright();
-
+   downloads_copyright(); 
 }
 
 function template_add_category()
@@ -1266,7 +1264,7 @@ function template_view_download()
 				echo $txt['downloads_text_lastdownload'] . ' ' . ($context['downloads_file']['lastdownload'] != 0 ? timeformat($context['downloads_file']['lastdownload']) : $txt['downloads_text_lastdownload2'] ) . '&nbsp;';
 
 			echo '</div>
-		<div class="indiryol"></div>
+		<div class="indiryol"><span class="generic_icons modifications"></span><a href="' . $scripturl . '?action=downloads;sa=downfile&id=', $context['downloads_file']['ID_FILE'], '">', ($context['downloads_file']['fileurl'] == '' ? $context['downloads_file']['orginalfilename'] : $txt['downloads_app_download']), '</a></div>
         </div>';
 
 	echo '<table cellspacing="0" cellpadding="10" border="0" align="center" width="100%" class="tborder">';
@@ -2059,7 +2057,6 @@ echo '
 			<form method="post" action="', $scripturl, '?action=downloads;sa=apprcomall">
 			<input type="submit" value="', $txt['downloads_form_approveallcomments'], '" />
 			</form>
-			<br />
 			<table cellspacing="0" cellpadding="10" border="0" align="center" width="90%" class="table_grid">
 				<thead>
 			<tr class="title_bar">
@@ -2113,7 +2110,7 @@ echo '
 		echo '
 			</table><br />';
 
-			echo '<b>' . $txt['downloads_form_reportedcomments'] . '</b><br />
+			echo '<b>' . $txt['downloads_form_reportedcomments'] . '</b>
 			<table cellspacing="0" cellpadding="10" border="0" align="center" width="90%" class="table_grid">
 				<thead>
 			<tr class="title_bar">
@@ -2157,8 +2154,6 @@ function template_search()
 {
 	global $scripturl, $txt, $context, $settings;
 
-
-	ShowTopDownloadBar2();
 
 	echo '
 <form method="post" action="', $scripturl, '?action=downloads;sa=search2">
@@ -2434,7 +2429,7 @@ function template_myfiles()
 		$count = 0;
 
 
-		echo '<br /><table cellspacing="0" cellpadding="10" border="0" align="center" width="90%" class="table_grid">
+		echo '<table cellspacing="0" cellpadding="10" border="0" align="center" width="90%" class="table_grid">
 
 			<thead>
 		<tr class="title_bar">';
