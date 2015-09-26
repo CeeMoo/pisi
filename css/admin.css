@@ -64,7 +64,7 @@ legend {
 ------------------------------------------------------- */
 /* Admin quick search bar, and results page. */
 h3.catbg #quick_search form {
-	padding-top: 2px;
+	margin-top: -4px;
 	font-size: 0.9em;
 }
 h3.catbg #quick_search form input, h3.catbg #quick_search form select, h3.catbg #quick_search form .button_submit {
