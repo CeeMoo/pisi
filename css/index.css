@@ -2,6 +2,30 @@
 #menuyeri{height: 50px;line-height: 46px;border-bottom: 1px solid #d8d8d8;}
 #logos{float: left;border-right: 1px solid #d8d8d8;}
 .solborder {border-left: 1px solid #d8d8d8; padding-left:7px;}
+.yarila {float: left;width:50%;height: 150px;}
+.indirbilgi {
+    float: left;
+    font-family: "Tahoma",sans-serif;
+    font-size: 0.9em;
+    font-weight: bold;
+    line-height: 3.3em;
+    color:#B8BAE0;
+    padding: 0 8px;
+}
+.indirbilgi::after {
+    border-bottom: 9px solid transparent;
+    border-right: 9px solid #5F62B6;
+    border-top: 9px solid transparent;
+    content: "";
+    display: block;
+    height: 0;
+    margin: -27px 0 0 -14px;
+    position: absolute;
+    width: 0;
+}
+.indiryol {float: right;box-shadow: 0 16px 20px rgba(255, 255, 255, 0.15) inset;line-height: 40px;padding: 0 5px;}
+.indiryol a:link {color:#E5E6F9;text-transform: uppercase;}
+.indiryol > .generic_icons.modifications {padding: 1px 2px;}
 #aramaz input[type=search] {
 	background: #ededed url("../images/theme/search-icon.png") no-repeat 9px center;
 	border: 1px solid #d8d8d8;
@@ -3689,15 +3713,14 @@ h3.catbg .icon {
 	margin: 0 0 0;
 	padding: 0px 0 0 9px;
 	border:1px solid #d8d8d8;
-	overflow: auto;
 }
 /* TitleBar & SubBar */
 .title_bar {
 	border-right: 1px solid #ddd;
 	border-left: 1px solid #ddd;
-	border-top: 2px solid #ff9400;
-	border-bottom: 2px solid #bf6900;
-	background: #fff;
+	border-top: 2px solid #5A5EB5;
+	border-bottom: 2px solid #5A5EB5;
+	background: #F7F7F7;
 	color: #666;
 	border-radius: 2px 2px 0 0;
 	text-align: left;
