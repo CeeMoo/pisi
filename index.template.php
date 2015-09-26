@@ -240,7 +240,7 @@ function template_body_above()
 
      while($row = $smcFunc['db_fetch_assoc']($request)) {
      echo '
-        <div class="solborder floatright"><a href="',$scripturl,'?action=downloads;sa=view;id=',$row['ID_FILE'],'" title="',$row['ftitle'],'">'. shorten_subject($row['ftitle'], 30) .'</a></div>';
+        <div class="solborder rightla"><a href="',$scripturl,'?action=downloads;sa=view;id=',$row['ID_FILE'],'" title="',$row['ftitle'],'">'. shorten_subject($row['ftitle'], 30) .'</a></div>';
      };
 
 	echo '

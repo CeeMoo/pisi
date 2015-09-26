@@ -10,12 +10,19 @@
 		margin: 5px 0 0 2px;
 	}
 	.dropmenu li a {
-		width: 80%;
+		width: 100%;
 	}
 }
 
 /* I have a Lumia with 480px screen... so ^^ */
 @media (max-width: 480px) {
+	.rightla {float: none;}
+#ust {height: 160px;line-height: 23px;}
+#top_info {width: 100%;}
+.floatright {float: left;}
+.cat_bar .desc {display: none;}
+#logos {border-bottom:1px solid #d8d8d8;}
+h3.catbg {font-size:0.9em;}
 	/* This is general */
 	.popup_window {
 		width: 93% !important;
@@ -40,10 +47,10 @@
 		margin: 0 0 0 -85px;
 	}
 	.dropmenu li {
-		width: 50%;
+		width: 100%;
 	}
 	.dropmenu li a {
-		width: 65%;
+		width: 100%;
 	}
 	.dropmenu ul li a {
 		width: auto !important;
@@ -230,6 +237,10 @@
 }
 
 @media (min-width: 481px) and (max-width: 720px) {
+	.desc {display: none;}
+	#ust{height: 80px;}
+	#top_info{border-right:none;}
+	.floatright{float: left;}
 	/* Display (Topic View) */
 	.poster {
 		float: none !important;
@@ -278,6 +289,7 @@
 }
 /* We have shared things... */
 @media screen and (max-width: 720px) {
+	.rightla {float: none;}
 	/* Stuff */
 	.infolinks {
 		display: inline-block;
@@ -442,6 +454,9 @@
 /* Still not enough data or people to test this... */
 /* This needs more data and this range is probably for iPad Air (alike) tablets... */
 @media (min-width: 721px) and (max-width: 855px) {
+	#ust {height: 80px;}
+	.rightla {float: none;}
+	.desc {display: none;}
 	div.lastpost {
 		margin: 0 0 0 20px !important;
 	}
@@ -452,6 +467,8 @@
 
 /* Some very big stuff? Dunno... */
 @media (min-width: 856px) and (max-width: 1024px) {
+	#ust {height: 80px;}
+	.rightla {float: none;}
 	div.lastpost {
 		width: 20% !important;
 		margin: 3px 0 0 5px;
