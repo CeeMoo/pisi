@@ -3,6 +3,7 @@
 #logos{float: left;border-right: 1px solid #d8d8d8;}
 .solborder {border-left: 1px solid #d8d8d8; padding-left:7px;}
 .yarila {float: left;width:50%;height: 150px;}
+#uyari {background: #666BC9;padding: 8px 5px;color:#f4f4f4;font-weight:bold;margin:0px 0 5px 0;box-shadow: 0 16px 20px rgba(255, 255, 255, 0.15) inset;}
 .indirbilgi {
     float: left;
     font-family: "Tahoma",sans-serif;
