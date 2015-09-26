@@ -375,7 +375,6 @@ echo'<article class="tab up_contain"><dl>';
 			<label class="tab-link up_contain" for="tab-E">',$txt['teknoromi4'],'</label>
 			<label class="tab-link up_contain" for="tab-F">',$txt['teknoromi5'],'</label>
 			<label class="tab-link up_contain" for="tab-G">',$txt['teknoromi6'],'</label>
-			<label class="tab-link up_contain" for="tab-Z"></label>
 	<article class="tab up_contain"><dl>';
 				foreach ($context['top_starters'] as $poster)
 	{echo '<dt><span style="background-position: 0px -22px;">&nbsp</span>', $poster['link'], '</dt><dd class="fmavi"><span class="fmavi1">', $poster['num_topics'], '</span></dd>';}

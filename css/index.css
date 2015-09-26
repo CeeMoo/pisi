@@ -2258,7 +2258,7 @@ tr.windowbg td, tr.windowbg2 td, .table_grid tr td {
 dl {
 	overflow: auto;
 	margin: 0;
-	padding: 0;
+	padding-top: 5px;
 }
 
 /* The basic user info on the left */
@@ -3041,7 +3041,8 @@ div.lastpost p {
 	overflow: hidden;
 	box-sizing: border-box;
 	border: 1px solid #DDD;
-	margin-top: -1px;
+	margin-top: 5px;
+	padding: 5px;
 }
 /* Child boards */
 .children {
