@@ -1264,7 +1264,7 @@ function template_view_download()
 				echo $txt['downloads_text_lastdownload'] . ' ' . ($context['downloads_file']['lastdownload'] != 0 ? timeformat($context['downloads_file']['lastdownload']) : $txt['downloads_text_lastdownload2'] ) . '&nbsp;';
 
 			echo '</div>
-		<div class="indiryol"><span class="generic_icons modifications"></span><a href="' . $scripturl . '?action=downloads;sa=downfile&id=', $context['downloads_file']['ID_FILE'], '">', ($context['downloads_file']['fileurl'] == '' ? $context['downloads_file']['orginalfilename'] : $txt['downloads_app_download']), '</a></div>
+		<div class="indiryol"><span class="generic_icons modifications"></span><a href="' . $scripturl . '?action=downloads;sa=downfile&id=', $context['downloads_file']['ID_FILE'], '"><div class="indirenki">',$txt['downloads_text_deldownload'],':</div>', ($context['downloads_file']['fileurl'] == '' ? $context['downloads_file']['orginalfilename'] : $txt['downloads_app_download']), '</a></div>
         </div>';
 
 	echo '<table cellspacing="0" cellpadding="10" border="0" align="center" width="100%" class="tborder">';

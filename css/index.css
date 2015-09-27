@@ -4,34 +4,36 @@
 .news h2 {float: left;padding-left:10px;}
 .news p {float:left;padding-left: 5px;}
 #ust {background:#f7f7f7;border-bottom: 1px solid #d8d8d8;height: 40px;line-height: 40px;}
-#menuyeri{height: 50px;line-height: 46px;border-bottom: 1px solid #d8d8d8;}
+#menuyeri{height: 50px;line-height: 46px;border-bottom: 1px solid #d8d8d8;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);margin-bottom:8px;}
 #logos{float: left;border-right: 1px solid #d8d8d8;}
 .solborder {border-left: 1px solid #d8d8d8; padding-left:7px;}
 .yarila {float: left;width:50%;height: 150px;}
-#uyari {background: #666BC9;padding: 8px 5px;color:#f4f4f4;font-weight:bold;margin:0px 0 5px 0;box-shadow: 0 16px 20px rgba(255, 255, 255, 0.15) inset;}
+#uyari {background: #DA2624;padding: 8px 5px;color:#f4f4f4;font-weight:bold;margin:0px 0 5px 0;box-shadow: 0 16px 20px rgba(255, 255, 255, 0.15) inset;}
 .indirbilgi {
-    float: left;
-    font-family: "Tahoma",sans-serif;
-    font-size: 0.9em;
-    font-weight: bold;
-    line-height: 3.3em;
-    color:#B8BAE0;
-    padding: 0 8px;
+	 float: left;
+	 font-family: "Tahoma",sans-serif;
+	 font-size: 0.9em;
+	 font-weight: bold;
+	 line-height: 3.3em;
+	 color:#B8BAE0;
+	 padding: 0 8px;
 }
 .indirbilgi::after {
-    border-bottom: 9px solid transparent;
-    border-right: 9px solid #5F62B6;
-    border-top: 9px solid transparent;
-    content: "";
-    display: block;
-    height: 0;
-    margin: -27px 0 0 -14px;
-    position: absolute;
-    width: 0;
+	 border-bottom: 9px solid transparent;
+	 border-right: 9px solid #5F62B6;
+	 border-top: 9px solid transparent;
+	 content: "";
+	 display: block;
+	 height: 0;
+	 margin: -27px 0 0 -14px;
+	 position: absolute;
+	 width: 0;
 }
-.indiryol {float: right;box-shadow: 0 16px 20px rgba(255, 255, 255, 0.15) inset;line-height: 40px;padding: 0 5px;}
-.indiryol a:link {color:#E5E6F9;text-transform: uppercase;}
-.indiryol > .generic_icons.modifications {padding: 1px 2px;}
+.indiryol {float: right;box-shadow: 0 36px 10px rgba(255, 255, 255, 0.15) inset;line-height: 40px;padding: 0 5px;}
+.indiryol a:link {font-weight:bold;color:#f8f8f8;text-transform: uppercase;float:left;}
+.indirenki{float:left;color:#25B520;padding-right:3px;}
+.indiryol > .generic_icons.modifications {padding: 1px 2px;float:left;margin:12px 2px 0 0;}
 #aramaz input[type=search] {
 	background: #ededed url("../images/theme/search-icon.png") no-repeat 9px center;
 	border: 1px solid #d8d8d8;
@@ -859,6 +861,11 @@ img.sort, .sort {
 	border: 1px solid transparent;
 	font-family:arial;
 	border-radius: 4px;
+  transition: all 300ms linear;
+  -o-transition: all 300ms linear;
+  -ms-transition: all 300ms linear;
+  -moz-transition: all 300ms linear;
+  -webkit-transition: all 300ms linear;
 }
 .dropmenu li a  {padding:4px 10px 4px 10px;}
 /* Level 1 active button. */
@@ -880,6 +887,13 @@ img.sort, .sort {
 	text-decoration: none;
 	box-shadow: 0 4px 4px rgba(255,255,255,0.1) inset;
 	text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
+}
+.dropdown li li a:hover, .dropmenu ul li:hover a {
+	  transition: all 0ms linear;
+  -o-transition: all 0ms linear;
+  -ms-transition: all 0ms linear;
+  -moz-transition: all 0ms linear;
+  -webkit-transition: all 0ms linear;
 }
 /* Level 1 active button. */
 .dropmenu li a.active:hover, .dropmenu li:hover a.active {
@@ -982,15 +996,15 @@ img.sort, .sort {
 }
 .dropmenu li ul {top:3.30em;left:-10px;}
 .dropmenu li ul::before {
-    border-bottom: 7px solid #ccc;
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    content: "";
-    display: block;
-    height: 0;
-    margin: -13px 0 0 30px;
-    position: absolute;
-    width: 0;}
+	 border-bottom: 7px solid #ccc;
+	 border-left: 7px solid transparent;
+	 border-right: 7px solid transparent;
+	 content: "";
+	 display: block;
+	 height: 0;
+	 margin: -13px 0 0 30px;
+	 position: absolute;
+	 width: 0;}
 /* Level 2 link background. */
 .dropmenu li li {
 	margin: 0;
@@ -1342,7 +1356,7 @@ ul li.greeting {
 
 /* The navigation list (i.e. linktree) */
 .navigate_section {
-	padding: 3px 0 0 0;
+	padding: 0;
 	float: left;
 	width: 100%;
 }
@@ -1351,7 +1365,7 @@ ul li.greeting {
 	padding: 0;
 }
 .navigate_section ul {
-	margin: 4px 0 0 0;
+	margin: 0;
 	padding: 0 10px;
 	font-size: 0.9em;
 	overflow: hidden;
@@ -1568,7 +1582,7 @@ ul li.greeting {
 	margin: 0;
 }
 /* Fixes for quickbuttons
-   Fix for quote on reply box */
+	Fix for quote on reply box */
 #post_modify {
 	border-radius: 4px;
 }
@@ -3655,28 +3669,28 @@ div.cat_bar {
 	height: 40px;
 }
 div.cat_bar::before {
-    border-top: 10px solid #575BB3;
-    border-bottom: 10px solid transparent;
-    border-left: 10px solid transparent;
-    content: "";
-    display: block;
-    height: 0;
-    margin: 40px 0 0 0px;
-    position: absolute;
-    width: 0;
+	 border-top: 10px solid #575BB3;
+	 border-bottom: 10px solid transparent;
+	 border-left: 10px solid transparent;
+	 content: "";
+	 display: block;
+	 height: 0;
+	 margin: 40px 0 0 0px;
+	 position: absolute;
+	 width: 0;
 }
 .cat_bar h3 {
 	padding: 8px 12px 6px 12px;
 }
-.desc::after {    border-right: 9px solid #6064B5;
-    border-bottom: 9px solid transparent;
-    border-top: 9px solid transparent;
-    content: "";
-    display: block;
-    height: 0;
-    margin: -15px 0px 0px -19px;
-    position: absolute;
-    width: 0;}
+.desc::after {	 border-right: 9px solid #6064B5;
+	 border-bottom: 9px solid transparent;
+	 border-top: 9px solid transparent;
+	 content: "";
+	 display: block;
+	 height: 0;
+	 margin: -15px 0px 0px -19px;
+	 position: absolute;
+	 width: 0;}
 
 /* Styles for rounded headers. */
 .cat_bar .desc
@@ -3708,7 +3722,7 @@ h3.catbg a:hover {
 }
 h3.catbg .icon {
 	vertical-align: middle;
-	margin: 0 5px 0 0;
+	margin: -1px 5px 0 0;
 }
 /* Roundframe */
 .roundframe {
@@ -4034,8 +4048,8 @@ background-image: linear-gradient(to bottom, #f0b7a1 0%,#8c3310 50%,#752201 51%,
 	.snrj{text-align: left;color:#000;}
 	.snrj .avatar{width:25px;float: left;margin-left: 5px;}
 		.children strong {
-    float: left;
-    width: 49%;
+	 float: left;
+	 width: 49%;
 }
 
 .smfdizin{padding:5px 0;

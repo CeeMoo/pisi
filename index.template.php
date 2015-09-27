@@ -37,7 +37,8 @@
 
 /**
  * Initialize the template... mainly little settings.
- */
+
+*/
 function template_init()
 {
 	global $settings, $txt;
@@ -70,7 +71,8 @@ function template_init()
 
 /**
  * The main sub template above the content.
- */
+
+*/
 function template_html_above()
 {
 	global $context, $settings, $scripturl, $txt, $modSettings, $mbname;
@@ -173,7 +175,6 @@ function template_body_above()
 	// Wrapper div now echoes permanently for better layout options. h1 a is now target for "Go up" links.
 	echo '
 	<div id="ust">
-	<div id="zaman">', $context['current_time'], '</div>
 		<div class="frame">';
 
 	// If the user is logged in, display some things that might be useful.
@@ -227,26 +228,26 @@ function template_body_above()
 						<p>', $context['random_news_line'], '</p>
 					</div>';
 
-     global $db_prefix, $scripturl, $smcFunc;
+	  global $db_prefix, $scripturl, $smcFunc;
 
-     $request = $smcFunc['db_query']('',"SELECT f.ID_FILE, f.ID_MEMBER, f.date, f.ID_CAT, f.totaldownloads, f.title AS ftitle,
-     c.title, m.real_Name, m.ID_MEMBER AS mID_MEMBER
-     FROM {$db_prefix}down_file AS f, {$db_prefix}down_cat AS c, {$db_prefix}members AS m
-     WHERE f.ID_CAT = '7'
-     AND f.approved = '1'
-     AND f.ID_MEMBER = m.ID_MEMBER
-     ORDER BY RAND()
-     LIMIT 1");
+	  $request = $smcFunc['db_query']('',"SELECT f.ID_FILE, f.ID_MEMBER, f.date, f.ID_CAT, f.totaldownloads, f.title AS ftitle,
+	  c.title, m.real_Name, m.ID_MEMBER AS mID_MEMBER
+	  FROM {$db_prefix}down_file AS f, {$db_prefix}down_cat AS c, {$db_prefix}members AS m
+	  WHERE f.ID_CAT = '7'
+	  AND f.approved = '1'
+	  AND f.ID_MEMBER = m.ID_MEMBER
+	  ORDER BY RAND()
+	  LIMIT 1");
 
-     while($row = $smcFunc['db_fetch_assoc']($request)) {
-     echo '
-        <div class="solborder rightla"><a href="',$scripturl,'?action=downloads;sa=view;id=',$row['ID_FILE'],'" title="',$row['ftitle'],'">'. shorten_subject($row['ftitle'], 30) .'</a></div>';
-     };
+	  while($row = $smcFunc['db_fetch_assoc']($request)) {
+	  echo '
+		  <div class="solborder rightla"><a href="',$scripturl,'?action=downloads;sa=view;id=',$row['ID_FILE'],'" title="',$row['ftitle'],'">'. shorten_subject($row['ftitle'], 30) .'</a></div>';
+	  };
 
 	echo '
 		</div>
 	</div>';
-
+	
 	echo '
 	<div id="menuyeri">
 		<div class="frame">
@@ -273,8 +274,8 @@ function template_body_above()
 			</form>';
 	}
 
-    echo '
-        </div>
+	 echo '
+		  </div>
 	</div>';
 
 	echo '
@@ -308,7 +309,7 @@ function template_body_below()
 	// There is now a global "Go to top" link at the right.
 		echo '
 			<ul class="floatright">
-				<li><a href="', $scripturl, '?action=help">', $txt['help'], '</a> ', (!empty($modSettings['requireAgreement'])) ? '| <a href="'. $scripturl. '?action=help;sa=rules">'. $txt['terms_and_rules']. '</a>' : '', ' | <a href="#top_section">', $txt['go_up'], ' &#9650;</a></li>
+				<li><a href="', $scripturl, '?action=help">', $txt['help'], '</a> ', (!empty($modSettings['requireAgreement'])) ? '| <a href="'. $scripturl. '?action=help;sa=rules">'. $txt['terms_and_rules']. '</a>' : '', ' | <a href="#ust">', $txt['go_up'], ' &#9650;</a></li>
 			</ul>
 			<ul class="reset">
 				<li class="copyright">', theme_copyright(), '</li>
@@ -339,7 +340,8 @@ function template_html_below()
 /**
  * Show a linktree. This is that thing that shows "My Community | General Category | General Discussion"..
  * @param bool $force_show = false
- */
+
+*/
 function theme_linktree($force_show = false)
 {
 	global $context, $shown_linktree, $scripturl, $txt;
@@ -401,7 +403,8 @@ function theme_linktree($force_show = false)
 
 /**
  * Show the menu up top. Something like [home] [help] [profile] [logout]...
- */
+
+*/
 function template_menu()
 {
 	global $context;
@@ -469,7 +472,8 @@ function template_menu()
  * @param array $button_strip
  * @param string $direction = ''
  * @param array $strip_options = array()
- */
+
+*/
 function template_button_strip($button_strip, $direction = '', $strip_options = array())
 {
 	global $context, $txt;
