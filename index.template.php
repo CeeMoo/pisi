@@ -253,12 +253,12 @@ function template_body_above()
 	echo '
 	<div class="menuyeri">
 	<div id="mcolor" class="floatright">
+			<a class="mor" href="', $scripturl, '?variant=mor" title=""></a>
 			<a class="red" href="', $scripturl, '?variant=red" title=""></a>
 			<a class="blue" href="', $scripturl, '?variant=blue" title=""></a>
 			<a class="green" href="', $scripturl, '?variant=green" title=""></a>
 			<a class="orange" href="', $scripturl, '?variant=orange" title=""></a>	
 			<a class="black" href="', $scripturl, '?variant=black" title=""></a>
-			<a class="black" href="', $scripturl, '?variant=mor" title=""></a>
     </div>
 		<div class="frame">
 			<a href="', $scripturl, '" title="Smf Destek"><img id="logos" src="' . $settings['images_url'] . '/theme/logo.png" alt="smfdestek" title="Smf Destek"></a>';

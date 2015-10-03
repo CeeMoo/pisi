@@ -469,6 +469,7 @@ h3.catbg {font-size:0.9em;}
 
 /* Some very big stuff? Dunno... */
 @media (min-width: 856px) and (max-width: 1024px) {
+	.fixed {position:relative;}
 	#ust {height: 80px;}
 	.rightla {float: none;}
 	div.lastpost {

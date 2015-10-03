@@ -1,3 +1,11 @@
+#mcolor { float: right; padding: 3px;}
+#mcolor a { display: inline-block; width: 15px; height: 15px; text-indent: -9999px; overflow: hidden; }
+#mcolor .red { background: #FF2323;}
+#mcolor .blue { background: #183DE0;}
+#mcolor .green { background: #7BB54F;}
+#mcolor .black { background: #141414;}
+#mcolor .orange { background: #EF6621;}
+#mcolor .mor { background:#5C60B5;}
 .fixed{position: fixed;top: 0;width:100%;
   transition: all 100ms linear;
   -o-transition: all 100ms linear;
