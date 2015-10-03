@@ -54,6 +54,8 @@ function template_init()
 	// Set the following variable to true if this theme requires the optional theme strings file to be loaded.
 	$settings['require_theme_strings'] = false;
 
+	$settings['theme_variants'] = array('mor','black', 'orange', 'red', 'green', 'blue');
+
 	// Set the following variable to true is this theme wants to display the avatar of the user that posted the last post on the board index and message index.
 	$settings['avatars_on_indexes'] = false;
 
@@ -100,7 +102,7 @@ function template_html_above()
 	// load in any javascript files from mods and themes
 	template_javascript();
 
-	echo '
+	echo '<link rel="stylesheet" type="text/css" href="', $settings['theme_url'], '/css/index_', $context['theme_variant'], '.css" />
 	<meta name="description" content="', !empty($context['meta_description']) ? $context['meta_description'] : $context['page_title_html_safe'], '">', !empty($context['meta_keywords']) ? '
 	<meta name="keywords" content="' . $context['meta_keywords'] . '">' : '', '
 	<title>', $context['page_title_html_safe'], '</title>
@@ -249,9 +251,17 @@ function template_body_above()
 	</div>';
 	
 	echo '
-	<div id="menuyeri">
+	<div class="menuyeri">
+	<div id="mcolor" class="floatright">
+			<a class="red" href="', $scripturl, '?variant=red" title=""></a>
+			<a class="blue" href="', $scripturl, '?variant=blue" title=""></a>
+			<a class="green" href="', $scripturl, '?variant=green" title=""></a>
+			<a class="orange" href="', $scripturl, '?variant=orange" title=""></a>	
+			<a class="black" href="', $scripturl, '?variant=black" title=""></a>
+			<a class="black" href="', $scripturl, '?variant=mor" title=""></a>
+    </div>
 		<div class="frame">
-			<img id="logos" src="' . $settings['images_url'] . '/theme/logo.png" alt="smfdestek" title="Smf Destek">';
+			<a href="', $scripturl, '" title="Smf Destek"><img id="logos" src="' . $settings['images_url'] . '/theme/logo.png" alt="smfdestek" title="Smf Destek"></a>';
 
 			template_menu();
 			
@@ -357,8 +367,8 @@ function theme_linktree($force_show = false)
 	if ($context['user']['is_logged'])
 	echo '
 						<li class="unread_links">
-							<a href="', $scripturl, '?action=unread" title="', $txt['unread_since_visit'], '">', $txt['view_unread_category'], '</a>
-							<a href="', $scripturl, '?action=unreadreplies" title="', $txt['show_unread_replies'], '">', $txt['unread_replies'], '</a>
+							<a href="', $scripturl, '?action=unread" title="', $txt['unread_since_visit'], '">', sprintf($txt['unread_since_visit1'],!empty($context['user']['unread_topics']) ? $context['user']['unread_topics'] : 0), '</a>
+                            <a href="', $scripturl, '?action=unreadreplies" title="', $txt['show_unread_replies'], '">', sprintf($txt['show_unread_replies1'],!empty($context['user']['unread_replies']) ? $context['user']['unread_replies'] : 0), '</a>
 						</li>';
 
 	// Each tree item has a URL and name. Some may have extra_before and extra_after.

@@ -1,4 +1,15 @@
 $(document).ready(function() {
+  $(window).bind('scroll', function() {
+    // The value of where the "scoll" is.
+    if($(window).scrollTop() > 100){
+      $('.menuyeri').addClass('fixed');
+    }else{
+      $('.menuyeri').removeClass('fixed');
+    }
+  })
+});
+
+$(document).ready(function() {
 	$('ul.dropmenu, ul.quickbuttons').superfish({delay : 250, speed: 100, sensitivity : 8, interval : 50, timeout : 1});
 
 	// tooltips

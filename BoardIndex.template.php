@@ -90,9 +90,9 @@ function template_main()
 
 			echo '<div id="uyari">Lütfen Yardım ve Destek için Sohbet alanı ve Kişisel iletileri kullanmayın.Herkezin bilgilenmesi için <span class="generic_icons moderate"></span><a href="index.php?board=24.0">2.0.x sorularınız için buraya</a> <span class="generic_icons moderate"></span><a href="index.php?board=35.0">2.1.x sorularınız için buraya</a></div>';
 
-            require_once($boarddir."/NChat/NChatBoardIndex.php");
 
-
+				 require_once($boarddir."/NChat/NChatBoardIndex.php");
+			
 			echo '
 	<div id="boardindex_table" class="boardindex_table">';
 

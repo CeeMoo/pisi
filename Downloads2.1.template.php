@@ -1354,10 +1354,8 @@ function template_view_download()
 					{
 						echo '<form method="post" action="' . $scripturl . '?action=downloads;sa=rate">';
 							for($i = 1; $i <= $max_num_stars;$i++)
-								echo '<input type="radio" name="rating" value="' . $i .'" />' . str_repeat('<img src="' . $settings['images_url'] . '/membericons/icon.png" alt="*" border="0" />', $i);
-
-
-					echo '
+								echo '<br/><input style="margin-top: -10px;" type="radio" name="rating" value="' . $i .'" />' . str_repeat('<img src="' . $settings['images_url'] . '/membericons/icon.gif" alt="*" border="0" />', $i);
+					echo '<br/>
 							 <input type="hidden" name="id" value="' . $context['downloads_file']['ID_FILE'] . '" />
 							 <input type="submit" name="submit" value="' . $txt['downloads_form_ratedownload'] . '" />
 						';

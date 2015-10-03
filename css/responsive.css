@@ -289,6 +289,7 @@ h3.catbg {font-size:0.9em;}
 }
 /* We have shared things... */
 @media screen and (max-width: 720px) {
+	.fixed {position:relative;}
 	.rightla {float: none;}
 	/* Stuff */
 	.infolinks {
@@ -454,6 +455,7 @@ h3.catbg {font-size:0.9em;}
 /* Still not enough data or people to test this... */
 /* This needs more data and this range is probably for iPad Air (alike) tablets... */
 @media (min-width: 721px) and (max-width: 855px) {
+	.fixed {position:relative;}
 	#ust {height: 80px;}
 	.rightla {float: none;}
 	.desc {display: none;}
